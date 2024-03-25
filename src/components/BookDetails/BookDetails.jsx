@@ -9,21 +9,54 @@ const BookDetails = () => {
 
   return (
     <div>
-      <div className="pt-10 card lg:card-side bg-base-100 shadow h-96">
-        <figure className="w-52">
-          <img src={book.image} alt="Album" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{book.bookName}</h2>
-          <p>
+      <div className="md:pt-20 flex gap-8">
+        <div className="bg-slate-50 p-20 rounded-xl">
+          <img className="w-80 h-80" src={book.image} alt="" />
+        </div>
+        <div className="p-2">
+          <h2 className="text-4xl font-bold pb-2">{book.bookName}</h2>
+          <p className="text-2xl pb-4">
             <span>By: </span>
             {book.author}
           </p>
           <hr />
-          <p>{book.category}</p>
+          <p className="text-2xl font-medium py-2">{book.category}</p>
           <hr />
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Listen</button>
+          <p className="text-lg py-4">{book.review}</p>
+          <div>
+            <p className="flex items-center gap-6 py-4">
+              <span className="text-lg font-bold">Tag</span>
+              <ul className="flex gap-5 font-semibold text-green-500 p-2">
+                {book.tags.map((tag, index) => (
+                  <li className="bg-slate-100 p-1 rounded-lg" key={index}>
+                    #{tag}
+                  </li>
+                ))}
+              </ul>
+            </p>
+          </div>
+          <hr />
+          <div className="text-lg flex md:gap-20 pt-5">
+            <div>
+              <p>Number of Pages:</p>
+              <p>Publisher:</p>
+              <p>Year of Publishing:</p>
+              <p>Rating: </p>
+            </div>
+            <div>
+              <p className="font-bold">{book.totalPages}</p>
+              <p className="font-bold">{book.publisher}</p>
+              <p className="font-bold">{book.yearOfPublishing}</p>
+              <p className="font-bold">{book.rating}</p>
+            </div>
+          </div>
+          <div className="flex gap-10 pt-10">
+            <button className="bg-slate-200 border hover:bg-green-500 px-6 py-2 rounded-lg">
+              Read
+            </button>
+            <button className="bg-[#50B1C9] hover:bg-blue-300 px-6 py-2 rounded-lg">
+              WishList
+            </button>
           </div>
         </div>
       </div>
