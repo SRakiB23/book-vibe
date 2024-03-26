@@ -7,11 +7,15 @@ import ListedBooks from "./components/ListedBooks/ListedBooks";
 import PagesToRead from "./components/PagesToRead/PagesToRead";
 import Root from "./components/Root/Root";
 import BookDetails from "./components/BookDetails/BookDetails";
+import UpcomingBooks from "./components/UpcomingBooks/UpcomingBooks";
+import AboutUs from "./components/AboutUs/AboutUs";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -31,6 +35,14 @@ const router = createBrowserRouter([
         path: "/pagestoread",
         element: <PagesToRead></PagesToRead>,
         loader: () => fetch("/bookData.json"),
+      },
+      {
+        path: "/upcomingbooks",
+        element: <UpcomingBooks></UpcomingBooks>,
+      },
+      {
+        path: "/aboutus",
+        element: <AboutUs></AboutUs>,
       },
     ],
   },

@@ -13,12 +13,18 @@ const Header = () => {
         <li>
           <NavLink to="/pagestoread">Pages To Read</NavLink>
         </li>
+        <li>
+          <NavLink to="/upcomingbooks">Upcoming Books</NavLink>
+        </li>
+        <li>
+          <NavLink to="/aboutus">About Us</NavLink>
+        </li>
       </>
     </div>
   );
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar-start">
+    <div className="text-center md:navbar bg-base-100 py-4">
+      <div className="md:navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -43,12 +49,14 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Books Vibe</a>
+        <a className="btn btn-ghost text-3xl font-bold text-red-600">
+          Books Valley
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end gap-5">
+      <div className="md:navbar-end gap-5">
         <a className="btn bg-green-500 text-white">Sign In</a>
         <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
       </div>

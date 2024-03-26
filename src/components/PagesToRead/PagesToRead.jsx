@@ -47,7 +47,7 @@ const PagesToRead = () => {
   };
 
   return (
-    <div>
+    <div className="bg-slate-50 py-10 rounded-2xl">
       <BarChart
         width={1200}
         height={500}
