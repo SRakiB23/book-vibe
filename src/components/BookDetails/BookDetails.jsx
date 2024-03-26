@@ -18,12 +18,13 @@ const BookDetails = () => {
   };
 
   const handleWishListBook = () => {
-    const isAlreadyInRead = getStoredReadBook(idInt);
+    const isAlreadyInRead = getStoredReadBook().includes(idInt); // Check if the book ID is in the reading list
+    console.log("idInt:", idInt);
+    console.log("isAlreadyInRead:", isAlreadyInRead);
 
     if (isAlreadyInRead) {
       toast.error("Already In READING List");
-    } else {
-      saveWishListBook(idInt);
+    } else if (saveWishListBook(idInt)) {
       toast("Added to Wishlist");
     }
   };

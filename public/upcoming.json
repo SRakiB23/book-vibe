@@ -1,0 +1,29 @@
+[
+  {
+    "bookId": 2,
+    "bookName": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "image": "https://i.ibb.co/C9ptGVq/img1.jpg",
+    "rating": 4.8,
+    "category": "Fiction",
+    "tags": ["Classic", "Coming-of-age"]
+  },
+  {
+    "bookId": 3,
+    "bookName": "Brave New World",
+    "author": "Aldous Huxley",
+    "image": "https://i.ibb.co/vY4c17h/img2.jpg",
+    "rating": 4.6,
+    "category": "Fiction",
+    "tags": ["Dystopian", "Science Fiction"]
+  },
+  {
+    "bookId": 4,
+    "bookName": "Sense and Sensibility",
+    "author": "Jane Austen",
+    "image": "https://i.ibb.co/mS4xtPX/img3.jpg",
+    "rating": 4.7,
+    "category": "Fiction",
+    "tags": ["Classic", "Romance"]
+  }
+]

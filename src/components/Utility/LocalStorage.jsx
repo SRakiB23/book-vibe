@@ -35,8 +35,9 @@ const getStoredWishListBook = () => {
 export { getStoredWishListBook };
 
 const saveWishListBook = (id) => {
+  console.log("Book Id:", id);
   const storedWishListBook = getStoredWishListBook();
-  const exists = storedWishListBook.find((bookId) => bookId === id);
+  const exists = storedWishListBook.includes(id);
   const existInRead = getStoredReadBook().includes(id);
 
   if (existInRead) {
@@ -47,9 +48,9 @@ const saveWishListBook = (id) => {
   if (!exists) {
     storedWishListBook.push(id);
     localStorage.setItem("wishlist-book", JSON.stringify(storedWishListBook));
-    return toast("Book Added to WishList");
+  } else {
+    toast.error("Already Existed in WishList");
   }
-  <ToastContainer />;
-  return toast.error("Already Existed in WishList");
 };
+
 export { saveWishListBook };

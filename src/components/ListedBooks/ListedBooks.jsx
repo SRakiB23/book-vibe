@@ -106,7 +106,6 @@ const ListedBooks = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <h2>Wishlist</h2>
           <div>
             {bookWishList.map((wishListBook) => (
               <WishListBook
