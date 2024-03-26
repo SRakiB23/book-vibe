@@ -37,6 +37,12 @@ export { getStoredWishListBook };
 const saveWishListBook = (id) => {
   const storedWishListBook = getStoredWishListBook();
   const exists = storedWishListBook.find((bookId) => bookId === id);
+  const existInRead = getStoredReadBook().includes(id);
+
+  if (existInRead) {
+    toast("This book is already in your Read list.");
+    return;
+  }
 
   if (!exists) {
     storedWishListBook.push(id);

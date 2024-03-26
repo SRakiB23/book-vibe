@@ -1,7 +1,11 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { saveReadBook, saveWishListBook } from "../Utility/LocalStorage";
+import {
+  getStoredReadBook,
+  saveReadBook,
+  saveWishListBook,
+} from "../Utility/LocalStorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -14,7 +18,14 @@ const BookDetails = () => {
   };
 
   const handleWishListBook = () => {
-    saveWishListBook(idInt);
+    const isAlreadyInRead = getStoredReadBook(idInt);
+
+    if (isAlreadyInRead) {
+      toast.error("Already In READING List");
+    } else {
+      saveWishListBook(idInt);
+      toast("Added to Wishlist");
+    }
   };
 
   return (
