@@ -1,4 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { saveReadBook } from "../Utility/LocalStorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -7,11 +10,17 @@ const BookDetails = () => {
   const book = books.find((book) => book.bookId === idInt);
   console.log(book);
 
+  const handleReadBook = () => {
+    console.log(idInt);
+    saveReadBook(idInt);
+    toast("Books Added to Read Successfully");
+  };
+
   return (
     <div>
-      <div className="md:pt-20 flex gap-8">
+      <div className="md:pt-20 md:flex gap-8">
         <div className="bg-slate-50 p-20 rounded-xl">
-          <img className="w-80 h-80" src={book.image} alt="" />
+          <img className="md:w-80 pt-20" src={book.image} alt="" />
         </div>
         <div className="p-2">
           <h2 className="text-4xl font-bold pb-2">{book.bookName}</h2>
@@ -24,7 +33,7 @@ const BookDetails = () => {
           <hr />
           <p className="text-lg py-4">{book.review}</p>
           <div>
-            <p className="flex items-center gap-6 py-4">
+            <div className="flex items-center gap-6 py-4">
               <span className="text-lg font-bold">Tag</span>
               <ul className="flex gap-5 font-semibold text-green-500 p-2">
                 {book.tags.map((tag, index) => (
@@ -33,7 +42,7 @@ const BookDetails = () => {
                   </li>
                 ))}
               </ul>
-            </p>
+            </div>
           </div>
           <hr />
           <div className="text-lg flex md:gap-20 pt-5">
@@ -50,10 +59,14 @@ const BookDetails = () => {
               <p className="font-bold">{book.rating}</p>
             </div>
           </div>
-          <div className="flex gap-10 pt-10">
-            <button className="bg-slate-200 border hover:bg-green-500 px-6 py-2 rounded-lg">
+          <div className="flex gap-5 pt-10">
+            <button
+              onClick={handleReadBook}
+              className="bg-slate-200 border-2 border-slate-300 hover:bg-green-500 px-6 py-2 rounded-lg"
+            >
               Read
             </button>
+            <ToastContainer />
             <button className="bg-[#50B1C9] hover:bg-blue-300 px-6 py-2 rounded-lg">
               WishList
             </button>
