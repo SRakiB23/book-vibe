@@ -8,12 +8,9 @@ const BookDetails = () => {
   const { bookId } = useParams();
   const idInt = parseInt(bookId);
   const book = books.find((book) => book.bookId === idInt);
-  console.log(book);
 
   const handleReadBook = () => {
-    console.log(idInt);
     saveReadBook(idInt);
-    toast("Books Added to Read Successfully");
   };
 
   return (

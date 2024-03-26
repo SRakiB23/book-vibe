@@ -17,9 +17,9 @@ const saveReadBook = (id) => {
   if (!exists) {
     storedReadBook.push(id);
     localStorage.setItem("read-book", JSON.stringify(storedReadBook));
-  } else {
-    toast("Already In the List");
-    <ToastContainer />;
+    return toast("Book Added to Read List");
   }
+  <ToastContainer />;
+  return toast.error("Already Existed!!!");
 };
 export { saveReadBook };
