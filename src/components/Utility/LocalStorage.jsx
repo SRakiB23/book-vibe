@@ -23,3 +23,27 @@ const saveReadBook = (id) => {
   return toast.error("Already Existed!!!");
 };
 export { saveReadBook };
+
+const getStoredWishListBook = () => {
+  const storedWishListBook = localStorage.getItem("wishlist-book");
+  if (storedWishListBook) {
+    return JSON.parse(storedWishListBook);
+  } else {
+    return [];
+  }
+};
+export { getStoredWishListBook };
+
+const saveWishListBook = (id) => {
+  const storedWishListBook = getStoredWishListBook();
+  const exists = storedWishListBook.find((bookId) => bookId === id);
+
+  if (!exists) {
+    storedWishListBook.push(id);
+    localStorage.setItem("wishlist-book", JSON.stringify(storedWishListBook));
+    return toast("Book Added to WishList");
+  }
+  <ToastContainer />;
+  return toast.error("Already Existed in WishList");
+};
+export { saveWishListBook };
