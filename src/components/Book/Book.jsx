@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaRegStar } from "react-icons/fa";
 
 const Book = ({ book }) => {
   const { bookId, bookName, author, image, rating, category, tags } = book;
@@ -9,7 +10,7 @@ const Book = ({ book }) => {
         <Link to={`/book/${bookId}`}>
           <div className="card h-2/4 bg-base-100 border">
             <figure>
-              <img src={image} alt="Shoes" />
+              <img src={image} alt="books" />
             </figure>
             <div className="card-body w-full flex-1">
               <div className="card-actions gap-4">
@@ -29,13 +30,13 @@ const Book = ({ book }) => {
                 {author}
               </p>
               <hr />
-              <div className="flex flex-1 justify-between pt-2">
+              <div className="flex flex-1 justify-between pt-2 font-semibold">
                 <p>{category}</p>
 
-                <p className="flex gap-2">
+                <p className="flex gap-2 pl-40">
                   {rating}
-                  <span>
-                    <img src="/public/images/Vector.png" alt="" />
+                  <span className="text-xl items-center">
+                    <FaRegStar />
                   </span>
                 </p>
               </div>

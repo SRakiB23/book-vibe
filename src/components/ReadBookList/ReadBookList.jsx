@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
+import { BsPeople } from "react-icons/bs";
+import { MdOutlineFindInPage } from "react-icons/md";
 
 const ReadBookList = ({ readBook }) => {
   const {
@@ -49,11 +51,15 @@ const ReadBookList = ({ readBook }) => {
           </div>
           <div className="flex gap-10">
             <div className="flex gap-2 items-center">
-              <img src="/public/images/publisher.png" alt="" />
+              <span className="text-xl">
+                <BsPeople />
+              </span>
               <p>Publisher: {publisher}</p>
             </div>
             <div className="flex items-center gap-2">
-              <img src="/public/images/page.png" alt="" />
+              <span className="text-xl">
+                <MdOutlineFindInPage />
+              </span>
               <p>Page {totalPages}</p>
             </div>
           </div>
