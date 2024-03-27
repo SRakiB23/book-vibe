@@ -18,7 +18,7 @@ const Banner = () => {
           </div>
         </div>
         <div className="pl-12 md:pb-14">
-          <img src="/public/images/banner.png" alt="" />
+          <img src="/images/banner.png" alt="" />
         </div>
       </div>
     </div>

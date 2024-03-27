@@ -1,7 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import { getStoredReadBook } from "../Utility/LocalStorage";
 import { useEffect, useState } from "react";
-import { BarChart, CartesianGrid, XAxis, YAxis, Bar, Cell } from "recharts";
+import {
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Bar,
+  Cell,
+  ResponsiveContainer,
+} from "recharts";
 
 const PagesToRead = () => {
   const books = useLoaderData();

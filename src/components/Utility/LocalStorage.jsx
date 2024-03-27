@@ -48,6 +48,7 @@ const saveWishListBook = (id) => {
   if (!exists) {
     storedWishListBook.push(id);
     localStorage.setItem("wishlist-book", JSON.stringify(storedWishListBook));
+    toast("Book Added to WishList");
   } else {
     toast.error("Already Existed in WishList");
   }

@@ -50,9 +50,9 @@ const Header = () => {
           </ul>
         </div>
         <Link to="/">
-          <a className="btn btn-ghost text-3xl font-bold text-red-600">
+          <p className="btn btn-ghost text-3xl font-bold text-red-600">
             Books Valley
-          </a>
+          </p>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

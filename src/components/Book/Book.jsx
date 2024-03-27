@@ -5,13 +5,13 @@ const Book = ({ book }) => {
 
   return (
     <div>
-      <div>
+      <div className="w-96">
         <Link to={`/book/${bookId}`}>
-          <div className="card w-96 h-2/4 bg-base-100 border">
+          <div className="card h-2/4 bg-base-100 border">
             <figure>
               <img src={image} alt="Shoes" />
             </figure>
-            <div className="card-body w-full">
+            <div className="card-body w-full flex-1">
               <div className="card-actions gap-4">
                 <div className="text-base text-green-500">
                   <ul className="flex gap-5">
@@ -29,7 +29,7 @@ const Book = ({ book }) => {
                 {author}
               </p>
               <hr />
-              <div className="w-full flex justify-between pt-2">
+              <div className="flex flex-1 justify-between pt-2">
                 <p>{category}</p>
 
                 <p className="flex gap-2">
